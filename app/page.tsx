@@ -1,10 +1,27 @@
+import { HoleBackground } from "@/components/animate-ui/components/backgrounds/hole";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="pt-40">
-      <Button variant={`destructive`}>Welcome to forge Ai</Button>
-      </div>
+    <main className="min-h-screen bg-[#0a0a0a] selection:bg-white/20">
+      <section className="relative flex flex-col items-center overflow-hidden px-4 pb-24 pt-40 text-center">
+        <HoleBackground
+          strokeColor="rgba(255,255,255,0.05)" // blur
+          className="absolute inset-0 h-full w-full"
+          style={{
+            maskImage:
+              "linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.5) 50%, transparent 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.5) 50%, transparent 100%)",
+          }}
+        />
+        <Badge variant="outline" className="gap-2 p-4 backdrop-blur-sm">
+          <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+          Powered by Agentic AI
+        </Badge>
+      </section>
+    </main>
   );
 }
